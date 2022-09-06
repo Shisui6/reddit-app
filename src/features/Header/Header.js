@@ -6,17 +6,17 @@ import { ImSearch } from 'react-icons/im'
 const Header = () => {
     return (
         <header>
-            <div className="logo">
+            <div className="logo" data-testid="logo">
                 <FaReddit className="logo-icon"/>
                 <p>Reddit<span>App</span></p>
             </div>
-            <form>
+            <form data-testid="search">
                <input type='text' placeholder='Search'/> 
                <button>
                     <ImSearch className="search"/>
                </button>
             </form>
-            <FaUser className="prof"/>
+            <FaUser className="prof" data-testid="profile"/>
         </header>
     );
 }
