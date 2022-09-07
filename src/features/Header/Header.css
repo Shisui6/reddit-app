@@ -5,6 +5,9 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 64px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 .logo {
@@ -25,7 +28,7 @@ header {
     bottom: 10px;
 }
 
-span {
+.bold-orange {
     font-size: 20px;
     color: #ff4500;
 }
@@ -52,7 +55,7 @@ input {
     margin-top: 7px;
 }
 
-button {
+.search-button {
     background-color: #ff4500;
     border: none;
     border-top-right-radius: 25px;
@@ -69,7 +72,7 @@ button {
     min-width: 30px;
 }
 
-button:hover {
+.search-button:hover {
     background-color: rgb(109, 109, 109);
 }
 

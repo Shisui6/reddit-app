@@ -1,8 +1,18 @@
 *{
   box-sizing: border-box;
+  /* border: 0.1px solid black; */
 }
 
 body {
   background: #fcfcfc;
   min-width: 540px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 60% 25%;
+  grid-gap: 15%;
+  padding-left: 50px;
+  padding-top: 100px;
+  padding-bottom: 80px;
 }

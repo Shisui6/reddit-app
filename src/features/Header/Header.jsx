@@ -8,11 +8,11 @@ const Header = () => {
         <header>
             <div className="logo" data-testid="logo">
                 <FaReddit className="logo-icon"/>
-                <p>Reddit<span>App</span></p>
+                <p>Reddit<span className="bold-orange">App</span></p>
             </div>
             <form data-testid="search">
                <input type='text' placeholder='Search'/> 
-               <button>
+               <button className="search-button">
                     <ImSearch className="search"/>
                </button>
             </form>
