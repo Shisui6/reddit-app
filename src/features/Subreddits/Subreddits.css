@@ -1,0 +1,59 @@
+.sub {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    padding: 25px;
+    padding-top: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-bottom: 30px;
+}
+
+.sub h2 {
+    text-align: center;
+}
+
+.sub-button {
+    width: 100%;
+    border-radius: 10px;
+    text-align: start;
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    color: #b0b0b0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sub-button:hover {
+    background-color: #e8e8e8;
+    color: #fff;
+}
+
+.avi {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #6f6f6f;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    background-size: cover;
+}
+
+#avi1{
+    
+}
+
+#avi2{
+    background-image: url('../../images/img3.png');
+}
+
+#avi3{
+    background-image: url('../../images/img4.png');
+}
+
+.sub-button p {
+    display: inline;
+    position: relative;
+    bottom: 11px;
+    font-weight: bold;
+}
