@@ -5,12 +5,12 @@
 
 body {
   background: #fcfcfc;
-  min-width: 540px;
+  min-width: 800px;
 }
 
 main {
   display: grid;
-  grid-template-columns: 65% 30%;
+  grid-template-columns: 65% minmax(260px, 30%);
   grid-gap: 5%;
   padding-left: 100px;
   margin-top: 50px;
@@ -20,5 +20,13 @@ main {
 
 .profile-comp {
   margin-top: 60px;
-  /* padding: 0px 15px; */
+}
+
+@media only screen and (max-width: 850px) {
+  main {
+    grid-template-columns: 100%;
+    padding-bottom:100px;
+    grid-gap: 50px
+  }
+  
 }

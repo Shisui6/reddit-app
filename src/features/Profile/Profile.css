@@ -2,14 +2,11 @@
     height: 260px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: #fff;
-    /* border-radius: 25px; */
 }
 
 .profile-back {
     height: 130px;
     background-color: darkcyan;
-    /* border-top-left-radius: 25px;
-    border-top-right-radius: 25px; */
 }
 
 .profile-img {
@@ -35,7 +32,7 @@
 
 .profile-sub {
     position: relative;
-    left: 17.5%;
+    left: 17.3%;
     bottom: 75px;
     color: #7c7c7c;
     width: 160px;
@@ -55,3 +52,10 @@
     position: relative;
     bottom: 95px;
 }
+
+@media only screen and (max-width: 850px) {
+    .profile-sub {
+      left: 23.5%;
+    }
+    
+  }
