@@ -4,11 +4,15 @@ import './App.css';
 import Header from './features/Header/Header';
 import Feed from './features/Feed/Feed';
 import Subreddits from './features/Subreddits/Subreddits';
+import Profile from './features/Profile/Profile';
 
 function App() {
   return (
     <>
       <Header />
+      <div className='profile-comp'>
+        <Profile/>
+      </div>
       <main>
         <div>
           <Feed/>

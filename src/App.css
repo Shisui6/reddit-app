@@ -10,9 +10,15 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 60% 25%;
-  grid-gap: 15%;
-  padding-left: 50px;
-  padding-top: 100px;
+  grid-template-columns: 65% 30%;
+  grid-gap: 5%;
+  padding-left: 100px;
+  margin-top: 50px;
   padding-bottom: 80px;
+  padding-right: 100px;
+}
+
+.profile-comp {
+  margin-top: 60px;
+  /* padding: 0px 15px; */
 }
