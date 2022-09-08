@@ -38,18 +38,6 @@
     background-size: cover;
 }
 
-#avi1{
-    
-}
-
-#avi2{
-    background-image: url('../../images/img3.png');
-}
-
-#avi3{
-    background-image: url('../../images/img4.png');
-}
-
 .sub-button p {
     display: inline;
     position: relative;

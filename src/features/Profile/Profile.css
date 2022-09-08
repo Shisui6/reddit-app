@@ -1,5 +1,5 @@
 .profile {
-    height: 260px;
+    height: 300px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: #fff;
 }
@@ -17,7 +17,6 @@
     position: relative;
     bottom: 35px;
     border-radius: 50%;
-    background-image: url('../../images/img4.png');
     background-size: cover;
     display: inline-block;
 }
@@ -32,16 +31,24 @@
 
 .profile-sub {
     position: relative;
-    left: 17.3%;
-    bottom: 75px;
+    left: 16.7%;
+    bottom: 85px;
     color: #7c7c7c;
     width: 160px;
+}
+
+.profile-desc {
+    position: relative;
+    left: 16.7%;
+    bottom: 85px;
+    color: #7c7c7c;
+    width: 80%;
 }
 
 .profile-view {
     text-align: center;
     position: relative;
-    bottom: 85px;
+    bottom: 80px;
     color: #7c7c7c;
 }
 
