@@ -5,6 +5,7 @@ import Header from './features/Header/Header';
 import Feed from './features/Feed/Feed';
 import Subreddits from './features/Subreddits/Subreddits';
 import Profile from './features/Profile/Profile';
+import ScrollButton from './components/ScrollButton';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Subreddits/>
         </div>
       </main>
+      <div>
+        <ScrollButton/>
+      </div>
     </>
   );
 }

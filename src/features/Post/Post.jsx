@@ -1,57 +1,36 @@
 import React from "react";
 import { FaComments, FaArrowUp, FaArrowDown } from "react-icons/fa";
+import moment from "moment/moment";
 import './Post.css';
+import shortenNumber from "../../utils/shortenNumber";
+import { getVideoUrl } from "../../utils/getUrl";
 
-const Post = () => {
+const Post = (props) => {
+
+    const { post } = props;
+
     return (
         <>
         <div className="post">
             <div className="voting">
                 <FaArrowUp className="up-vote"/>
-                <p>1.3k</p>
+                <p>{shortenNumber(post.ups, 1)}</p>
                 <FaArrowDown/>
             </div>
             <div className="post-info">
-                <p>KalabraxTheWicked</p>
-                <p id="time">2 hours ago</p>
-                <h3>Uruguayan miners accidentally discovered this stunning heart-shaped amethyst geode</h3>
-                <img src={require("../../images/img1.jpg")} alt="pic" />
+                <p>{post.author}</p>
+                <p id="time">{moment.unix(post.created_utc).fromNow()}</p>
+                <h3>{post.title}</h3>
+                {post.url.includes('jpg') || post.url.includes('png') ? <img src={post.url} alt=" " /> : post.media && post.media.reddit_video ? <video controls>
+                <source src={post.media.reddit_video.fallback_url} type="video/mp4"/>
+                Your browser does not support the video tag.
+                </video> : post.media && post.media.oembed ? <iframe src={getVideoUrl(post.media.oembed.html)}> </iframe> : <p></p>}
+
                 <button className="comment-button">
-                    <span><FaComments/> 47 Comments</span>
+                    <span><FaComments/> {shortenNumber(post.num_comments, 1)} Comments</span>
                 </button>
             </div>
-        </div>
-        <div className="post">
-            <div className="voting">
-                <FaArrowUp className="up-vote"/>
-                <p>4.7k</p>
-                <FaArrowDown/>
-            </div>
-            <div className="post-info">
-                <p>_Im_Dad</p>
-                <p id="time">4 hours ago</p>
-                <h3>Leak resistant cup, no need for a lid.</h3>
-                <button className="comment-button">
-                    <span><FaComments/> 648 Comments</span>
-                </button>
-            </div>
-        </div>
-        <div className="post">
-            <div className="voting">
-                <FaArrowUp className="up-vote"/>
-                <p>2.0k</p>
-                <FaArrowDown/>
-            </div>
-            <div className="post-info">
-                <p>The_Love-Tap</p>
-                <p id="time">6 hours ago</p>
-                <h3>Identifying Medieval English Longbows</h3>
-                <img src={require("../../images/img2.jpg")} alt="pic" />
-                <button className="comment-button">
-                    <span><FaComments/> 79 Comments</span>
-                </button>
-            </div>
-        </div>
+        </div>  
         </>
     );
 };

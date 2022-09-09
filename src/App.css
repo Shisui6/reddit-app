@@ -3,6 +3,10 @@
   /* border: 0.1px solid black; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #fcfcfc;
   min-width: 800px;

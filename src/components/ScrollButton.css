@@ -1,0 +1,30 @@
+.scroll-button {
+   position: fixed; 
+   right: 6%;
+   bottom: 20px;
+   font-size: 3rem;
+   z-index: 1;
+   cursor: pointer;
+   color: #ff4500;
+   background: none;
+   border: none;
+   transition: .3s;
+   animation-name: example;
+   animation-duration: 1.5s;
+}
+
+.scroll-button:hover {
+    color: #6d6d6d;
+}
+
+@keyframes example {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@media only screen and (max-width: 850px) {
+    .scroll-button {
+      right: 2%;
+    }
+    
+}

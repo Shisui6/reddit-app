@@ -1,12 +1,12 @@
 .profile {
-    height: 300px;
+    height: 250px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: #fff;
 }
 
 .profile-back {
     height: 130px;
-    background-color: darkcyan;
+    background-size: cover;
 }
 
 .profile-img {
@@ -29,20 +29,11 @@
     font-size: 28px;
 }
 
-.profile-sub {
-    position: relative;
-    left: 16.7%;
-    bottom: 85px;
-    color: #7c7c7c;
-    width: 160px;
-}
-
 .profile-desc {
     position: relative;
-    left: 16.7%;
-    bottom: 85px;
+    bottom: 75px;
     color: #7c7c7c;
-    width: 80%;
+    margin-left: 202px;
 }
 
 .profile-view {
@@ -61,8 +52,8 @@
 }
 
 @media only screen and (max-width: 850px) {
-    .profile-sub {
-      left: 23.5%;
+    .profile-desc {
+      margin-left: 177px;
     }
     
   }
