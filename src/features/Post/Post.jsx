@@ -5,9 +5,8 @@ import './Post.css';
 import shortenNumber from "../../utils/shortenNumber";
 import { getVideoUrl } from "../../utils/getUrl";
 
-const Post = (props) => {
 
-    const { post } = props;
+const Post = ({post}) => {
 
     return (
         <>
@@ -24,7 +23,7 @@ const Post = (props) => {
                 {post.url.includes('jpg') || post.url.includes('png') ? <img src={post.url} alt=" " /> : post.media && post.media.reddit_video ? <video controls>
                 <source src={post.media.reddit_video.fallback_url} type="video/mp4"/>
                 Your browser does not support the video tag.
-                </video> : post.media && post.media.oembed ? <iframe src={getVideoUrl(post.media.oembed.html)}> </iframe> : <p></p>}
+                </video> : post.media && post.media.oembed ? <iframe src={getVideoUrl(post.media.oembed.html)} title='video'> </iframe> : <p></p>}
 
                 <button className="comment-button">
                     <span><FaComments/> {shortenNumber(post.num_comments, 1)} Comments</span>

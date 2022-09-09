@@ -1,40 +1,52 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectSubreddits, loadSubreddits } from "../../slices/subredditsSlice";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { getPictureUrl, defProf } from '../../utils/getUrl.js'
 import { setSubredditInfo, setSelectedSubreddit } from "../../slices/subredditPostsSlice";
 import './Subreddits.css';
 
-const Subreddits = () => {
+const Subreddits = ({subreddit}) => {
 
-    const dispatch = useDispatch()
-    const subreddits = useSelector(selectSubreddits);
+    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(loadSubreddits())
-    }, [dispatch])
+    const selectImage = () => {
+        if (subreddit.icon_img) {
+            return subreddit.icon_img;
+        } 
+        else if (getPictureUrl(subreddit.community_icon)) {
+            return getPictureUrl(subreddit.community_icon);
+        }
+        else {
+            return defProf
+        }
+    }
+
+    const selectBackground = () => {
+        if (getPictureUrl(subreddit.banner_background_image)) {
+            return getPictureUrl(subreddit.banner_background_image)
+        } else {
+            return subreddit.banner_img
+        }
+    }
+
+    const handleClick = () => {
+        const subredditInfo = {
+            name: subreddit.display_name,
+            image: selectImage(),
+            background: selectBackground(),
+            description: subreddit.public_description
+        };
+
+        dispatch(setSubredditInfo(subredditInfo));
+        dispatch(setSelectedSubreddit(subreddit.url));
+        document.documentElement.scrollTop = 0;
+
+    }
 
     return (
-        <>
-        <div className="sub">
-            <h2>Subreddits</h2>
-            {subreddits.map((subreddit) => (
-                <button className="sub-button" onClick={() => {
-                    dispatch(setSubredditInfo({
-                        name: subreddit.display_name,
-                        image: subreddit.icon_img ? subreddit.icon_img : getPictureUrl(subreddit.community_icon) ? getPictureUrl(subreddit.community_icon) : defProf,
-                        background: getPictureUrl(subreddit.banner_background_image) ? getPictureUrl(subreddit.banner_background_image) : subreddit.banner_img,
-                        description: subreddit.public_description
-                    }));
-                    dispatch(setSelectedSubreddit(subreddit.url));
-                    document.documentElement.scrollTop = 0;
-                }}>
-                <div className="avi" style={{backgroundImage: `url(${subreddit.icon_img ? subreddit.icon_img : getPictureUrl(subreddit.community_icon) ? getPictureUrl(subreddit.community_icon) : defProf})`}}></div>
+        <button className="sub-button" onClick={handleClick}>
+            <div className="avi" style={{backgroundImage: `url(${selectImage()})`}}></div>
                 <p>{subreddit.display_name}</p>
-            </button>
-            ))}
-        </div>
-        </>
+        </button>
     );
 };
 

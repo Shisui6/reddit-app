@@ -3,9 +3,9 @@ import React from 'react';
 import './App.css';
 import Header from './features/Header/Header';
 import Feed from './features/Feed/Feed';
-import Subreddits from './features/Subreddits/Subreddits';
 import Profile from './features/Profile/Profile';
 import ScrollButton from './components/ScrollButton';
+import SubredditList from './features/SubredditList/SubredditList';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Feed/>
         </div>
         <div>
-          <Subreddits/>
+          <SubredditList/>
         </div>
       </main>
       <div>

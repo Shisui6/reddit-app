@@ -18,7 +18,7 @@ export const subredditPostsSlice = createSlice({
         subredditInfo: {
             name: 'Popular',
             image: require('../images/popular.png'),
-            background: require('../images/banner.png'),
+            background: require('../images/banner1.jpg'),
             description: 'Reddit Home Page'
         },
         posts: [],
@@ -59,5 +59,6 @@ export const {
 export const selectSelectedSubreddit = (state) => state.subredditPosts.selectedSubreddit;
 export const selectSubredditInfo = (state) => state.subredditPosts.subredditInfo;
 export const selectPosts = (state) => state.subredditPosts.posts;
+export const selectIsLoading = (state) => state.subredditPosts.isLoading;
 
 export default subredditPostsSlice.reducer;

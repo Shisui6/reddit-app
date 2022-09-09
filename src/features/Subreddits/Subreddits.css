@@ -1,16 +1,3 @@
-.sub {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #fff;
-    padding: 25px;
-    padding-top: 5px;
-    border-radius: 25px;
-    padding-bottom: 30px;
-}
-
-.sub h2 {
-    text-align: center;
-}
-
 .sub-button {
     width: 100%;
     border-radius: 10px;
@@ -43,4 +30,19 @@
     position: relative;
     bottom: 11px;
     font-weight: bold;
+}
+
+.skeleton-button {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+}
+
+.skeleton-name {
+    margin-left: 10px;
+    position: relative;
+    top: 12px;
 }
