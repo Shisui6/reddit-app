@@ -42,6 +42,11 @@
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    
+}
+
+.comment-button span {
+    display: block;
 }
 
 .comment-button:hover {

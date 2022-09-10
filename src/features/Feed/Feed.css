@@ -1,0 +1,18 @@
+.no-post {
+    text-align: center;
+}
+
+.no-post button {
+    background-color: #ff4500;
+    color: #fff;
+    padding: 20px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.no-post button:hover {
+    background-color: #6d6d6d;
+}

@@ -77,6 +77,10 @@ input {
     background-color: rgb(109, 109, 109);
 }
 
+.search-button:disabled {
+    background-color: #ccc;
+}
+
 .search {
     position: relative;
     top: 2px;

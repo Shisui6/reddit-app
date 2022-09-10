@@ -26,7 +26,8 @@ const Post = ({post}) => {
                 </video> : post.media && post.media.oembed ? <iframe src={getVideoUrl(post.media.oembed.html)} title='video'> </iframe> : <p></p>}
 
                 <button className="comment-button">
-                    <span><FaComments/> {shortenNumber(post.num_comments, 1)} Comments</span>
+                    <FaComments/> 
+                    <span>{shortenNumber(post.num_comments, 1)} Comments</span>
                 </button>
             </div>
         </div>  

@@ -8,6 +8,8 @@
     color: #b0b0b0;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-bottom: 10px;
 }
 
 .sub-button:hover {
