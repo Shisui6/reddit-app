@@ -2,7 +2,7 @@
 
 > Reddit App is a web application built using React and Redux. It uses the reddit API to fetch and display post information under reddit's most popular subreddits. Users can also view comments related to each post, as well as filter posts according to a search criteria.
 
-![image](https://user-images.githubusercontent.com/37116322/190857197-901f5b40-ef81-46b5-8008-dab178b4e435.png)
+![image](https://user-images.githubusercontent.com/37116322/190857985-545e4d62-270e-4dda-8cf6-4e9de232fdc4.png)
 
 ## Features
 
@@ -18,14 +18,14 @@
 - HTML | CSS | JavaScript
 - React | Redux
 
-## Live Demo (if available)
+## Live Demo 
 
 [Live Demo Link](https://livedemo.com)
 
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Setup
 
@@ -33,15 +33,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
-- `npm start` - Runs the app in the development mode.\
+- `npm start` - Runs the app in the development mode
 
 ### Run tests
 
-- `npm test` - Launches the test runner in the interactive watch mode.\
+- `npm test` - Launches the test runner in the interactive watch mode
 
 ### Deployment
 
-- `npm run build` - Builds the app for production to the `build` folder.\
+- `npm run build` - Builds the app for production to the `build` folder
 
 ## Authors
 
@@ -63,10 +63,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- CodeCademy Full-Stack Engineer Career Path
+- [CodeCademy](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path) Full-Stack Engineer Career Path
 
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
