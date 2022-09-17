@@ -3,7 +3,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { FaComments } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { selectComments, selectLoadingComments } from "../../slices/subredditPostsSlice";
-import { AnimatedList } from 'react-animated-list';
+// import { AnimatedList } from 'react-animated-list';
 import './Modal.css'
 import Comments from "../../features/Comments/Comments";
 import CommentSkeleton from "../../features/Comments/CommentSkeleton";
@@ -24,9 +24,7 @@ const Modal = props => {
                     <button className="modal-button" onClick={props.onClose}><IoMdCloseCircle/></button>
                 </div>
                 <div className="modal-body">
-                    {loadingComments ? <AnimatedList animation="zoom">
-                {Array(getRandomNumber(3, 10)).fill(<CommentSkeleton />)}
-            </AnimatedList> : comments.map(comment => (
+                    {loadingComments ? <>{Array(getRandomNumber(3, 10)).fill(<CommentSkeleton />)}</> : comments.map(comment => (
                         <Comments comment={comment}/>
                     ))}
                 </div>

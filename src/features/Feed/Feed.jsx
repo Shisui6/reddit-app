@@ -14,7 +14,7 @@ import './Feed.css'
 import Post from "../Post/Post";
 import PostSkeleton from "../Post/PostSkeleton";
 import getRandomNumber from "../../utils/getRandomNumber";
-import { AnimatedList } from 'react-animated-list';
+// import { AnimatedList } from 'react-animated-list';
 import Modal from "../../components/Modal/Modal";
 
 const Feed = () => {
@@ -34,9 +34,11 @@ const Feed = () => {
 
     if(postLoading) {
         return (
-            <AnimatedList animation="zoom">
-                {Array(getRandomNumber(3, 10)).fill(<PostSkeleton />)}
-            </AnimatedList>
+            // <AnimatedList animation="zoom">
+            <>
+            {Array(getRandomNumber(3, 10)).fill(<PostSkeleton />)}
+            </>
+            // </AnimatedList>
         )
     }
 

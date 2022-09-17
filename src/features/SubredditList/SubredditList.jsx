@@ -5,7 +5,7 @@ import Subreddits from "../Subreddits/Subreddits";
 import './SubredditList.css';
 import SubredditSkeleton from "../Subreddits/SubredditSkeleton";
 import getRandomNumber from "../../utils/getRandomNumber";
-import { AnimatedList } from 'react-animated-list';
+// import { AnimatedList } from 'react-animated-list';
 
 const SubredditList = () => {
 
@@ -22,9 +22,9 @@ const SubredditList = () => {
         return (
             <div className="sub">
                 <h2>Subreddits</h2>
-                <AnimatedList animation="zoom">
+                {/* <AnimatedList animation="zoom"> */}
                     {Array(getRandomNumber(3, 10)).fill(<SubredditSkeleton />)}
-                </AnimatedList>
+                {/* </AnimatedList> */}
             </div>
         )
     }
