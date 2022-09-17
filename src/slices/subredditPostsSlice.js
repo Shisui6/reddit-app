@@ -6,9 +6,19 @@ export const loadSubredditPosts = createAsyncThunk(
         const response = await fetch(`https://www.reddit.com${subreddit}.json`);
         const jsonResponse = await response.json();
 
-        return jsonResponse.data.children.map(post => post.data)
+        return jsonResponse.data.children.map(post => post.data);
     }
-)
+);
+
+export const loadComments = createAsyncThunk(
+    'subredditPosts/getComments',
+    async(permalink) => {
+        const response = await fetch(`https://www.reddit.com${permalink}.json`);
+        const jsonResponse = await response.json();
+
+        return jsonResponse[1].data.children.map(comment => comment.data);
+    }
+);
 
 
 export const subredditPostsSlice = createSlice({
@@ -22,8 +32,12 @@ export const subredditPostsSlice = createSlice({
             description: 'Reddit Home Page'
         },
         posts: [],
-        isLoading: false,
-        hasError: false,
+        comments: [],
+        loadingComments: false,
+        errorComments: false,
+        showComments: false,
+        loadingPosts: false,
+        errorPosts: false,
         searchTerm: ''
     },
     reducers: {
@@ -35,37 +49,61 @@ export const subredditPostsSlice = createSlice({
         },
         setSearchTerm(state, action) {
             state.searchTerm = action.payload;
+        },
+        toggleShowComments(state, action) {
+            state.showComments = action.payload;
+        },
+        resetComments(state, action) {
+            state.comments = [];
         }
     },
     extraReducers: {
         [loadSubredditPosts.pending]: (state, action) => {
-            state.isLoading = true;
-            state.hasError = false;
+            state.loadingPosts = true;
+            state.errorPosts = false;
         },
         [loadSubredditPosts.fulfilled]: (state, action) => {
             state.posts = action.payload;
-            state.isLoading = false;
-            state.hasError = false;
+            state.loadingPosts = false;
+            state.errorPosts = false;
         },
         [loadSubredditPosts.rejected]: (state, action) => {
-            state.isLoading = false;
-            state.hasError = true;
+            state.loadingPosts = false;
+            state.errorPosts = true;
         },
+        [loadComments.pending]: (state, action) => {
+            state.loadingComments = true;
+            state.errorComments = false;
+        },
+        [loadComments.fulfilled]: (state, action) => {
+            state.comments = action.payload;
+            state.loadingComments = false;
+            state.errorComments = false;
+        },
+        [loadComments.rejected]: (state, action) => {
+            state.loadingComments = false;
+            state.errorComments = true;
+        }
     }
 });
 
 export const {
     setSelectedSubreddit,
     setSubredditInfo,
-    setSearchTerm
+    setSearchTerm,
+    toggleShowComments,
+    resetComments
  } = subredditPostsSlice.actions;
 
 export const selectSelectedSubreddit = (state) => state.subredditPosts.selectedSubreddit;
 export const selectSubredditInfo = (state) => state.subredditPosts.subredditInfo;
 export const selectPosts = (state) => state.subredditPosts.posts;
-export const selectIsLoading = (state) => state.subredditPosts.isLoading;
-export const selectHasError = (state) => state.subredditPosts.hasError;
+export const selectLoadingPosts = (state) => state.subredditPosts.loadingPosts;
+export const selectErrorPosts = (state) => state.subredditPosts.errorPosts;
 export const selectSearchTerm = (state) => state.subredditPosts.searchTerm;
+export const selectShowComments = (state) => state.subredditPosts.showComments;
+export const selectComments = (state) => state.subredditPosts.comments;
+export const selectLoadingComments = (state) => state.subredditPosts.loadingComments;
 
 export const selectFilteredPosts = (state) => {
     const posts = selectPosts(state);

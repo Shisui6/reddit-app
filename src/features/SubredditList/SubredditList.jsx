@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectSubreddits, loadSubreddits, selectIsLoading } from "../../slices/subredditsSlice";
+import { selectSubreddits, loadSubreddits, selectIsLoading, selectHasError } from "../../slices/subredditsSlice";
 import Subreddits from "../Subreddits/Subreddits";
 import './SubredditList.css';
 import SubredditSkeleton from "../Subreddits/SubredditSkeleton";
@@ -12,6 +12,7 @@ const SubredditList = () => {
     const dispatch = useDispatch()
     const isLoading = useSelector(selectIsLoading)
     const subreddits = useSelector(selectSubreddits);
+    const error = useSelector(selectHasError);
 
     useEffect(() => {
         dispatch(loadSubreddits())
@@ -28,11 +29,23 @@ const SubredditList = () => {
         )
     }
 
+    if (error) {
+        return (
+            <div className="sub">
+                <h2>Subreddits</h2>
+                <div className="no-post">
+                    <p>Failed to load subreddit list</p>
+                    <button onClick={() => dispatch(loadSubreddits())}>Try again</button>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="sub">
             <h2>Subreddits</h2>
             {subreddits.map(subreddit => (
-                <Subreddits subreddit={subreddit}/>
+                <Subreddits subreddit={subreddit} key={subreddit.id}/>
             ))}
         </div>
     )

@@ -3,31 +3,36 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectFilteredPosts, 
   loadSubredditPosts, 
   selectSelectedSubreddit, 
-  selectIsLoading, 
+  selectLoadingPosts, 
   selectSearchTerm, 
   setSearchTerm,
-  selectHasError } from "../../slices/subredditPostsSlice";
+  selectShowComments,
+  toggleShowComments,
+  resetComments,
+  selectErrorPosts } from "../../slices/subredditPostsSlice";
 import './Feed.css'
 import Post from "../Post/Post";
 import PostSkeleton from "../Post/PostSkeleton";
 import getRandomNumber from "../../utils/getRandomNumber";
 import { AnimatedList } from 'react-animated-list';
+import Modal from "../../components/Modal/Modal";
 
 const Feed = () => {
 
     const dispatch = useDispatch();
     const posts = useSelector(selectFilteredPosts);
     const selectedSubreddit = useSelector(selectSelectedSubreddit);
-    const isLoading = useSelector(selectIsLoading);
-    const error = useSelector(selectHasError);
-    const searchTerm = useSelector(selectSearchTerm)
-    console.log(posts)
+    const postLoading = useSelector(selectLoadingPosts);
+    const postError = useSelector(selectErrorPosts);
+    const searchTerm = useSelector(selectSearchTerm);
+    const showComments = useSelector(selectShowComments);
+   
 
     useEffect(() => {
         dispatch(loadSubredditPosts(selectedSubreddit));
     }, [selectedSubreddit, dispatch]);
 
-    if(isLoading) {
+    if(postLoading) {
         return (
             <AnimatedList animation="zoom">
                 {Array(getRandomNumber(3, 10)).fill(<PostSkeleton />)}
@@ -35,7 +40,7 @@ const Feed = () => {
         )
     }
 
-    if (error) {
+    if (postError) {
         return (
             <div className="no-post">
                 <h2>Failed to load posts</h2>
@@ -55,9 +60,11 @@ const Feed = () => {
 
     return (
         <>
-            {posts.map((post) => (
-            <Post post={post} key={post.id}/>
+            {posts.map((post, index) => (
+            <Post post={post} key={post.id} index={index}/>
         ))}
+        {showComments ? document.body.style.overflow = 'hidden': document.body.style.overflow = 'unset'}
+        <Modal show={showComments} onClose={() => {dispatch(toggleShowComments(false)); dispatch(resetComments())}}/>
         </>
     )
 }

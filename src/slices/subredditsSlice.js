@@ -45,6 +45,7 @@ export const subredditsSlice = createSlice({
 ///////////////////////////////////////
 export const selectSubreddits = (state) =>state.subreddits.subreddits;
 export const selectIsLoading = (state) => state.subreddits.isLoading;
+export const selectHasError = (state) => state.subreddits.hasError;
 
 
 // Exports

@@ -56,4 +56,13 @@
 
 .voting {
     text-align: center;
+    transition: .3s;
+}
+
+.post-vote-up:hover {
+    color: green;
+}
+
+.post-vote-down:hover {
+    color: red;
 }

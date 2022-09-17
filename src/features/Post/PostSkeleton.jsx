@@ -15,7 +15,7 @@ const PostSkeleton = () => {
         <div className="post-info">
             <p><Skeleton width={80} inline={true}/></p>
             <p id="time"><Skeleton width={80} inline={true}/></p>
-            <h3><Skeleton count={getRandomNumber(1, 2)}/></h3>
+            <h3>{getRandomNumber(1,2) === 1 ? <Skeleton style={{width: `${getRandomNumber(50, 100)}%`}}/> : <><Skeleton style={{width: `100%`}}/><Skeleton style={{width: `${getRandomNumber(20, 100)}%`}}/></>}</h3>
             <Skeleton className="img-skeleton"/>
             <button className="comment-button">
             <span><FaComments style={{display: 'inline'}}/> <Skeleton inline={true}/></span>

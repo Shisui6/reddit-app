@@ -4,17 +4,21 @@ import moment from "moment/moment";
 import './Post.css';
 import shortenNumber from "../../utils/shortenNumber";
 import { getVideoUrl } from "../../utils/getUrl";
+import { toggleShowComments, loadComments } from "../../slices/subredditPostsSlice";
+import { useDispatch } from "react-redux";
 
 
-const Post = ({post}) => {
+const Post = ({post, index}) => {
+
+    const dispatch = useDispatch()
 
     return (
         <>
         <div className="post">
             <div className="voting">
-                <FaArrowUp className="up-vote"/>
+                <FaArrowUp className="post-vote-up" style={{cursor: 'pointer'}}/>
                 <p>{shortenNumber(post.ups, 1)}</p>
-                <FaArrowDown/>
+                <FaArrowDown className="post-vote-down" style={{cursor: 'pointer'}}/>
             </div>
             <div className="post-info">
                 <p>{post.author}</p>
@@ -25,7 +29,9 @@ const Post = ({post}) => {
                 Your browser does not support the video tag.
                 </video> : post.media && post.media.oembed ? <iframe src={getVideoUrl(post.media.oembed.html)} title='video'> </iframe> : <p></p>}
 
-                <button className="comment-button">
+                <button className="comment-button" onClick={() => {
+                    dispatch(toggleShowComments(true))
+                    dispatch(loadComments(post.permalink))}}>
                     <FaComments/> 
                     <span>{shortenNumber(post.num_comments, 1)} Comments</span>
                 </button>

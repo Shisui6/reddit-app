@@ -4,8 +4,9 @@ import './App.css';
 import Header from './features/Header/Header';
 import Feed from './features/Feed/Feed';
 import Profile from './features/Profile/Profile';
-import ScrollButton from './components/ScrollButton';
+import ScrollButton from './components/ScrollButton/ScrollButton';
 import SubredditList from './features/SubredditList/SubredditList';
+
 
 function App() {
   return (

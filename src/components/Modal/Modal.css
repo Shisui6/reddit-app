@@ -1,0 +1,87 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.modal-header{
+    border-bottom: 2px solid #ccc;
+    height: 50px;
+    padding: 20px;
+    padding-bottom: 40px;
+    position: fixed;
+    width: 15%;
+    background-color: #fff;
+    z-index: 1;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-content {
+    width: 15%;
+    height: 130px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    border-radius: 25px;
+}
+
+.modal.show .modal-content {
+    width: 80%;
+    height: 450px;
+}
+
+.modal.show .modal-header {
+    width: 80%;
+}
+
+.modal.show .modal-body {
+    height: 390px;
+}
+
+.modal-title {
+    display: inline;
+}
+
+.modal-header button {
+    display: inline;
+    float: right;
+    font-size: 28px;
+    color: #ff4500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+    bottom: 3px;
+}
+
+.modal-header button:hover {
+    color: #6d6d6d;
+}
+
+.modal-body {
+    margin-top: 60px;
+    padding: 30px;
+    height: 80px;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+    
