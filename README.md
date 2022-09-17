@@ -1,46 +1,61 @@
-# Getting Started with Create React App and Redux
+# Reddit App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+> Reddit App is a web application built using React and Redux. It uses the reddit API to fetch and display post information under reddit's most popular subreddits. Users can also view comments related to each post, as well as filter posts according to a search criteria.
 
-## Available Scripts
+## Built With
 
-In the project directory, you can run:
+- HTML | CSS | JavaScript
+- React | Redux
 
-### `npm start`
+## Live Demo (if available)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Live Demo Link](https://livedemo.com)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get a local copy up and running follow these simple example steps.
 
-### `npm run build`
+### Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `npm install` - Installs project dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `npm start` - Runs the app in the development mode.\
 
-### `npm run eject`
+### Run tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `npm test` - Launches the test runner in the interactive watch mode.\
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `npm run build` - Builds the app for production to the `build` folder.\
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Authors
 
-## Learn More
+👤 **Shisui**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GitHub: [@Shisui6](https://github.com/Shisui6)
+- Twitter: [@ukemdi007](https://twitter.com/ukemdi007)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/okemdi-udeh-1b472615a/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- CodeCademy Full-Stack Engineer Career Path
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._

@@ -63,7 +63,7 @@ const Feed = () => {
             {posts.map((post, index) => (
             <Post post={post} key={post.id} index={index}/>
         ))}
-        {showComments ? document.body.style.overflow = 'hidden': document.body.style.overflow = 'unset'}
+        {showComments ? document.body.style.overflow = 'hidden': document.body.style.overflow = ''}
         <Modal show={showComments} onClose={() => {dispatch(toggleShowComments(false)); dispatch(resetComments())}}/>
         </>
     )
