@@ -2,6 +2,17 @@
 
 > Reddit App is a web application built using React and Redux. It uses the reddit API to fetch and display post information under reddit's most popular subreddits. Users can also view comments related to each post, as well as filter posts according to a search criteria.
 
+![image](https://user-images.githubusercontent.com/37116322/190857197-901f5b40-ef81-46b5-8008-dab178b4e435.png)
+
+## Features
+
+- Fetches and displays subreddit and reddit data from the reddit API
+- Displays loading screens to the user during fetch
+- Displays comments for each post in a modal popup
+- Provides search functionality to filter post data
+- Back to top button when the user scrolls down the page
+- Responsive design which adapts to most screen sizes
+
 ## Built With
 
 - HTML | CSS | JavaScript
